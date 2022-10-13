@@ -31,11 +31,17 @@ int main(int argc, char **argv)
     while((opt = getopt(argc, argv, "svh")) != -1) {
         switch(opt) {
         case 's':
-            std::cout << "Summa: " << a1+(a2) << std::endl;
-            sd+=1; break;
+            if (sd == 0) {
+            	std::cout << "Summa: " << a1+(a2) << std::endl;
+            	sd+=1;
+            }
+            break;
         case 'v':
-            std::cout << "Subtraction: " << a1-(a2) << std::endl;
-            sd+=1; break;
+            if (sd == 0) {
+            	std::cout << "Subtraction: " << a1-(a2) << std::endl;
+            	sd+=1;
+            }
+            break;
         case 'h':
             help();
         case '?':
